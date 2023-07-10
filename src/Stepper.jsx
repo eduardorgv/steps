@@ -17,6 +17,17 @@ export const Stepper = () => {
     if(step < 3) setStep((s) => s + 1)
   }
 
+  const Button = ({ textColor, bgColor, onClick, children}) => {
+    return (
+      <button
+        style={{ background: bgColor, color: textColor }}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    )
+  }
+
   return (
     <div className="steps">
       <div className="numbers">
@@ -30,18 +41,16 @@ export const Stepper = () => {
       </p>
 
       <div className="buttons">
-        <button
-          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+        <Button
+          textColor="#fff"
+          bgColor="#7950f2"
           onClick={handlePrevious}
-        >
-          Previous
-        </button>
-        <button
-          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+        ><span>👈🏻</span> Previous</Button>
+        <Button
+          textColor="#fff"
+          bgColor="#7950f2"
           onClick={handleNext}
-        >
-          Next
-        </button>
+        >Next <span>👉🏻</span></Button>
       </div>
     </div>
   );
