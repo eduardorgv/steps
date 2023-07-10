@@ -1,5 +1,5 @@
 import "./App.css";
-import { Stepper } from "./Stepper";
+import { Stepper } from "./components/Stepper";
 import { useState } from "react";
 
 function App() {
